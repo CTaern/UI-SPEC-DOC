@@ -1,0 +1,209 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={User Interface Specification Document},
+  pdfauthor={CemalTanerAltundaş},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{User Interface Specification Document}
+\author{CemalTanerAltundaş}
+\date{2024-02-14}
+
+\begin{document}
+\maketitle
+
+\hypertarget{user-interface-specification-document}{%
+\subsection{User Interface Specification
+Document}\label{user-interface-specification-document}}
+
+\hypertarget{overview}{%
+\subsection{Overview}\label{overview}}
+
+This document describes user interface for the user management screen.
+Ui should allow to see list of users and adding/editing user.
+
+\hypertarget{requirements}{%
+\subsection{Requirements}\label{requirements}}
+
+\begin{itemize}
+\item
+  UI should display list of users accounts with ID-User
+  Name-Email-Enabled/Disabled Status.
+\item
+  UI should allow users to add new accounts with username, display name,
+  phone number, email address, user role.
+\item
+  UI should allow users to edit existing accounts with the same
+  information as adding a new account.
+\item
+  UI should have a tickbox to enable accounts.
+\item
+  UI should have ``Save User'' to confirm.
+\item
+  UI should have a checkbox to hide disabled user accounts.
+\end{itemize}
+
+\hypertarget{ui-components}{%
+\subsection{UI Components}\label{ui-components}}
+
+UI will have following components.
+
+\begin{itemize}
+\item
+  A table to display list of user accounts.
+\item
+  A form to add/edit user accounts.
+\item
+  Checkbox to enable accounts.
+\item
+  A `Save User' button.
+\item
+  Tickbox to hide disabled accounts.
+\end{itemize}
+
+\hypertarget{table-components}{%
+\subsection{Table Components}\label{table-components}}
+
+Table will display list of user accounts. It will have following
+columns:
+
+\begin{itemize}
+\item
+  Username
+\item
+  Display Name
+\item
+  Email
+\item
+  Enabled: User's enabled/disabled status.
+\end{itemize}
+
+\hypertarget{form-components}{%
+\subsection{Form Components}\label{form-components}}
+
+Form will allow users to add/edit accounts. - Username
+
+\begin{itemize}
+\item
+  Display Name
+\item
+  Phone
+\item
+  Email
+\item
+  User Roles: Dropdown menu to select user's role. Options are
+  ``Guest'', ``Admin'', ``Super Admin''.
+\end{itemize}
+
+\hypertarget{behavior}{%
+\subsection{Behavior}\label{behavior}}
+
+\begin{itemize}
+\item
+  When UI loads, it will display list of user accounts with specified
+  information. If there are disabled accounts and tickbox is checked
+  they wont be displayed.
+\item
+  Adding a new user accounts, user can enter information in the form and
+  click the ``Save User'' button. New account will added to list.
+\item
+  To edit existing accounts, user can click from list and form will be
+  automaticly fill and can be edited then user can click ``Save User''.
+\end{itemize}
+
+\hypertarget{accessibility}{%
+\subsection{Accessibility}\label{accessibility}}
+
+UI should be accessible to all users.
+
+\begin{itemize}
+\item
+  Form fields and buttons should have visible labels.
+\item
+  ``Save User'' button should be visible and clear indications.
+\item
+  UI should be easily navigable.
+\end{itemize}
+
+\hypertarget{code-repository}{%
+\subsection{Code Repository}\label{code-repository}}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://github.com/CTaern/UI-SPEC-DOC}
+\end{itemize}
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+\begin{itemize}
+\item
+  This document desribes the UI for user management screen,
+  requirements, components, behavior and accesibility.
+\item
+  Developers can use it to build the UI.
+\end{itemize}
+
+\end{document}

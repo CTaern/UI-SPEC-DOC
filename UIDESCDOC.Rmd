@@ -1,0 +1,98 @@
+---
+title: "User Interface Specification Document"
+author: "CemalTanerAltundaş"
+date: "2024-02-14"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## User Interface Specification Document
+
+## Overview
+
+This document describes user interface for the user management screen. Ui should allow to see list of users and adding/editing user.
+
+## Requirements
+
+-   UI should display list of users accounts with ID-User Name-Email-Enabled/Disabled Status.
+
+-   UI should allow users to add new accounts with username, display name, phone number, email address, user role.
+
+-   UI should allow users to edit existing accounts with the same information as adding a new account.
+
+-   UI should have a tickbox to enable accounts.
+
+-   UI should have "Save User" to confirm.
+
+-   UI should have a checkbox to hide disabled user accounts.
+
+## UI Components
+
+UI will have following components.
+
+-   A table to display list of user accounts.
+
+-   A form to add/edit user accounts.
+
+-   Checkbox to enable accounts.
+
+-   A 'Save User' button.
+
+-   Tickbox to hide disabled accounts.
+
+## Table Components
+
+Table will display list of user accounts. It will have following columns:
+
+-   Username
+
+-   Display Name
+
+-   Email
+
+-   Enabled: User's enabled/disabled status.
+
+## Form Components
+
+Form will allow users to add/edit accounts. - Username
+
+-   Display Name
+
+-   Phone
+
+-   Email
+
+-   User Roles: Dropdown menu to select user's role. Options are "Guest", "Admin", "Super Admin".
+
+## Behavior
+
+-   When UI loads, it will display list of user accounts with specified information. If there are disabled accounts and tickbox is checked they wont be displayed.
+
+-   Adding a new user accounts, user can enter information in the form and click the "Save User" button. New account will added to list.
+
+-   To edit existing accounts, user can click from list and form will be automaticly fill and can be edited then user can click "Save User".
+
+## Accessibility
+
+UI should be accessible to all users.
+
+-   Form fields and buttons should have visible labels.
+
+-   "Save User" button should be visible and clear indications.
+
+-   UI should be easily navigable.
+
+## Code Repository
+
+-   <https://github.com/CTaern/UI-SPEC-DOC>
+
+## Conclusion
+
+-   This document desribes the UI for user management screen, requirements, components, behavior and accesibility.
+
+-   Developers can use it to build the UI.
